@@ -1,0 +1,454 @@
+// Number of columns
+$columns: 	12;
+
+// Gutter width
+$gutter: 	40px; // This needs to be an even number.
+
+// Breakpoints
+$maxwidth: 		1440px;
+$wrapperwidth:	1280px;
+$dt: 			1170px;
+$tl: 			1024px;
+$tp: 			768px;
+$ml: 			568px;
+$mp: 			320px;
+
+* {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+*:before, *:after {
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+}
+
+.wrapper {
+	max-width: $wrapperwidth;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: $gutter / 2;
+	padding-right: $gutter / 2;
+}
+
+.row {
+	margin-left: -$gutter / 2;
+	margin-right: -$gutter / 2;
+}
+
+.nested {
+	margin-bottom: 0 !important;
+}
+
+.wrapper:before,
+.row:before {
+	display: table;
+	content: " ";
+}
+
+.wrapper:after,
+.row:after {
+	clear: both;
+	display: table;
+	content: " ";
+}
+
+$columnsCount: $columns;
+@while $columnsCount > 0 {
+	.nested .dt-#{$columnsCount}, .nested .tl-#{$columnsCount}, .nested .tp-#{$columnsCount}, .nested .ml-#{$columnsCount}, .nested .mp-#{$columnsCount} {
+		margin-bottom: 0;
+	}
+	
+	$columnsCount: $columnsCount - 1;
+}
+
+$columnsCount: $columns;
+@while $columnsCount > 0 {
+	.dt-#{$columnsCount}, .tl-#{$columnsCount}, .tp-#{$columnsCount}, .ml-#{$columnsCount}, .mp-#{$columnsCount} {
+		float: left;
+		padding-left: $gutter / 2;
+		padding-right: $gutter / 2;
+		min-height: 1px;
+		margin-bottom: $gutter / 2;
+	}
+	
+	$columnsCount: $columnsCount - 1;
+}
+
+$columnsCount: $columns;
+@while $columnsCount > 0 {
+	.mp-#{$columnsCount} {
+		width: (100% / $columns) * $columnsCount;
+	}
+	
+	$columnsCount: $columnsCount - 1;
+}
+
+$columnsCount: $columns;
+@while $columnsCount > 0 {
+	.ml-#{$columnsCount} {
+		width: (100% / $columns) * $columnsCount;
+	}
+	
+	$columnsCount: $columnsCount - 1;
+}
+
+$columnsCount: $columns;
+@while $columnsCount > 0 {
+	.tp-#{$columnsCount} {
+		width: (100% / $columns) * $columnsCount;
+	}
+	
+	$columnsCount: $columnsCount - 1;
+}
+
+$columnsCount: $columns;
+@while $columnsCount > 0 {
+	.tl-#{$columnsCount} {
+		width: (100% / $columns) * $columnsCount;
+	}
+	
+	$columnsCount: $columnsCount - 1;
+}
+
+$columnsCount: $columns;
+@while $columnsCount > 0 {
+	.dt-#{$columnsCount} {
+		width: (100% / $columns) * $columnsCount;
+	}
+	
+	$columnsCount: $columnsCount - 1;
+}
+
+.wrapper:after,
+.row:after {
+	clear: both;
+	display: table;
+	content: " ";
+}
+
+$columnsCount: $columns;
+@while $columnsCount > 0 {
+	.dt-#{$columnsCount}, .tl-#{$columnsCount}, .tp-#{$columnsCount}, .ml-#{$columnsCount}, .mp-#{$columnsCount} {
+		float: left;
+		padding-left: $gutter / 2;
+		padding-right: $gutter / 2;
+		min-height: 1px;
+		margin-bottom: $gutter / 2;
+	}
+	
+	$columnsCount: $columnsCount - 1;
+}
+
+$columnsCount: $columns;
+@while $columnsCount > 0 {
+	.mp-#{$columnsCount}, .ml-#{$columnsCount}, .tp-#{$columnsCount}, .tl-#{$columnsCount}, .dt-#{$columnsCount} {
+		width: (100% / $columns) * $columnsCount;
+	}
+	
+	$columnsCount: $columnsCount - 1;
+}
+
+$columnsCount: $columns;
+@while $columnsCount > 0 {
+	.indent-mp-#{$columnsCount}, .indent-ml-#{$columnsCount}, .indent-tp-#{$columnsCount}, .indent-tl-#{$columnsCount}, .indent-dt-#{$columnsCount} {
+		margin-left: (100% / $columns) * $columnsCount;
+	}
+	
+	$columnsCount: $columnsCount - 1;
+}
+
+@media (min-width: $dt) and (max-width: $maxwidth) {
+	.wrapper {
+		max-width: $dt;
+	}
+}
+
+@media (max-width: $dt - 1) {
+	.wrapper {
+		max-width: $tl;
+	}
+	
+	$columnsCount: $columns;
+	@while $columnsCount > 0 {
+		.dt-#{$columnsCount} {
+			width: 100%;
+		}
+		
+		$columnsCount: $columnsCount - 1;
+	}
+	
+	$columnsCount: $columns;
+	@while $columnsCount > 0 {
+		.indent-dt-#{$columnsCount} {
+			margin-left: 0;
+		}
+		
+		$columnsCount: $columnsCount - 1;
+	}
+	
+	$columnsCount: $columns;
+	@while $columnsCount > 0 {
+		.mp-#{$columnsCount} {
+			width: (100% / $columns) * $columnsCount;
+		}
+		
+		$columnsCount: $columnsCount - 1;
+	}
+	
+	$columnsCount: $columns;
+	@while $columnsCount > 0 {
+		.ml-#{$columnsCount} {
+			width: (100% / $columns) * $columnsCount;
+		}
+		
+		$columnsCount: $columnsCount - 1;
+	}
+	
+	$columnsCount: $columns;
+	@while $columnsCount > 0 {
+		.tp-#{$columnsCount} {
+			width: (100% / $columns) * $columnsCount;
+		}
+		
+		$columnsCount: $columnsCount - 1;
+	}
+	
+	$columnsCount: $columns;
+	@while $columnsCount > 0 {
+		.tl-#{$columnsCount} {
+			width: (100% / $columns) * $columnsCount;
+		}
+		
+		$columnsCount: $columnsCount - 1;
+	}
+}
+
+@media (max-width: $tl - 1) {
+	$columnsCount: $columns;
+	@while $columnsCount > 0 {
+		.tl-#{$columnsCount} {
+			width: 100%;
+		}
+		
+		$columnsCount: $columnsCount - 1;
+	}
+	
+	$columnsCount: $columns;
+	@while $columnsCount > 0 {
+		.indent-tl-#{$columnsCount} {
+			margin-left: 0;
+		}
+		
+		$columnsCount: $columnsCount - 1;
+	}
+	
+	$columnsCount: $columns;
+	@while $columnsCount > 0 {
+		.mp-#{$columnsCount} {
+			width: (100% / $columns) * $columnsCount;
+		}
+		
+		$columnsCount: $columnsCount - 1;
+	}
+	
+	$columnsCount: $columns;
+	@while $columnsCount > 0 {
+		.ml-#{$columnsCount} {
+			width: (100% / $columns) * $columnsCount;
+		}
+		
+		$columnsCount: $columnsCount - 1;
+	}
+	
+	$columnsCount: $columns;
+	@while $columnsCount > 0 {
+		.tp-#{$columnsCount} {
+			width: (100% / $columns) * $columnsCount;
+		}
+		
+		$columnsCount: $columnsCount - 1;
+	}
+}
+
+@media (max-width: $tp - 1) {
+	$columnsCount: $columns;
+	@while $columnsCount > 0 {
+		.tp-#{$columnsCount} {
+			width: 100%;
+		}
+		
+		$columnsCount: $columnsCount - 1;
+	}
+	
+	$columnsCount: $columns;
+	@while $columnsCount > 0 {
+		.indent-tp-#{$columnsCount} {
+			margin-left: 0;
+		}
+		
+		$columnsCount: $columnsCount - 1;
+	}
+	
+	$columnsCount: $columns;
+	@while $columnsCount > 0 {
+		.mp-#{$columnsCount} {
+			width: (100% / $columns) * $columnsCount;
+		}
+		
+		$columnsCount: $columnsCount - 1;
+	}
+	
+	$columnsCount: $columns;
+	@while $columnsCount > 0 {
+		.ml-#{$columnsCount} {
+			width: (100% / $columns) * $columnsCount;
+		}
+		
+		$columnsCount: $columnsCount - 1;
+	}
+}
+
+@media (max-width: $ml - 1) {
+	$columnsCount: $columns;
+	@while $columnsCount > 0 {
+		.ml-#{$columnsCount} {
+			width: 100%;
+		}
+		
+		$columnsCount: $columnsCount - 1;
+	}
+	
+	$columnsCount: $columns;
+	@while $columnsCount > 0 {
+		.indent-ml-#{$columnsCount} {
+			margin-left: 0;
+		}
+		
+		$columnsCount: $columnsCount - 1;
+	}
+	
+	$columnsCount: $columns;
+	@while $columnsCount > 0 {
+		.mp-#{$columnsCount} {
+			width: (100% / $columns) * $columnsCount;
+		}
+		
+		$columnsCount: $columnsCount - 1;
+	}
+}
+
+// Hide columns
+@media (max-width: $ml - 1) {
+	.hide-mp {
+		display: none !important;
+	}
+	
+	.hide-ml {
+		display: none !important;
+	}
+	
+	.hide-tp {
+		display: none !important;
+	}
+	
+	.hide-tl {
+		display: none !important;
+	}
+	
+	.hide-dt {
+		display: none !important;
+	}
+}
+
+@media (min-width: $ml) and (max-width: $tp - 1) {
+	.hide-ml {
+		display: none !important;
+	}
+	
+	.hide-tp {
+		display: none !important;
+	}
+	
+	.hide-tl {
+		display: none !important;
+	}
+	
+	.hide-dt {
+		display: none !important;
+	}
+}
+
+@media (min-width: $tp) and (max-width: $tl - 1) {
+	.hide-tp {
+		display: none !important;
+	}
+	
+	.hide-tl {
+		display: none !important;
+	}
+	
+	.hide-dt {
+		display: none !important;
+	}
+}
+
+@media (max-width: $tl) {
+	.hide-tl {
+		display: none !important;
+	}
+	
+	.hide-dt {
+		display: none !important;
+	}
+}
+
+@media (min-width: $tl + 1) {
+	.hide-dt {
+		display: none !important;
+	}
+}
+
+.invisible {
+	visibility: hidden;
+}
+.hidden {
+	display: none;
+}
+.hide-mp-up {
+	display: none !important;
+}
+@media (max-width: $mp - 1) {
+	.hide-mp-down {display: none !important;}
+}
+@media (min-width: $ml) {
+	.hide-ml-up {display: none !important;}
+}
+@media (max-width: $ml - 1) {
+	.hide-ml-down {display: none !important;}
+}
+@media (min-width: $tp) {
+	.hide-tp-up {display: none !important;}
+}
+@media (max-width: $tp - 1) {
+	.hide-tp-down {display: none !important;}
+}
+@media (min-width: $tl) {
+	.hide-tl-up {display: none !important;}
+}
+@media (max-width: $tl - 1) {
+	.hide-tl-down {display: none !important;}
+}
+@media (min-width: $dt) {
+	.hide-dt-down {display: none !important;}
+}
+.hide-dt-up {
+	display: none !important;
+}

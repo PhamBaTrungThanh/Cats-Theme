@@ -1,0 +1,19 @@
+{
+  "name": "cats-for-wp",
+  "version": "1.0.0",
+  "description": "A wordpress template for cats gaming team",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wordpress"
+  ],
+  "private": true,
+  "author": "phambatrungthanh@gmail.com",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2"
+  }
+}
