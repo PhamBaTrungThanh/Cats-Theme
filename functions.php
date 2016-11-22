@@ -143,7 +143,18 @@ require get_template_directory() . '/inc/jetpack.php';
 
 // Custom functions
 function reformat_wp_nav() {
-	$nav = wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'items_wrap' => '%3$s', 'container' => false , 'echo' => false, 'depth' => 0, 'before' => '<div class="main-navigation-bit" column>', 'after' => '</div>' ) );
-	$nav = strip_tags($nav, '<a><div>');
+	$nav = wp_nav_menu( array( 
+		'theme_location' => 'primary',
+		'menu_id'        => 'primary-menu',
+		'items_wrap'     => '%3$s',
+		'container'      => false ,
+		'echo'           => false,
+		'depth'          => 0,
+		'link_before'    => '<span>',
+		'link_after'     => '</span>'
+		) );
+	$nav = preg_replace( "/<(\/?)li/", "<$1div", $nav );
+	$nav = preg_replace( "/<span>(.+?)<\/span>/", "<span content='$1'>$1</span>", $nav );
+	//$nav = strip_tags($nav, '<a><div>');
 	return $nav;
 }

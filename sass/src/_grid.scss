@@ -452,3 +452,21 @@ $columnsCount: $columns;
 .hide-dt-up {
 	display: none !important;
 }
+
+.fluid {
+	width: 100%;
+	margin-bottom: $gutter;
+}
+// FLEX
+.flex {
+	display: flex;
+}
+.flex.horizontal-center {
+	justify-content: center;
+}
+.flex.veritcal-center {
+	align-items: center;
+}
+.flex-item.even-fill {
+	flex: 1 1 0;
+}

@@ -1,5 +1,107 @@
+/// VARIABLES
+$nav_height: 50px;
+$triangle_height: 15px;
+
+
 header#masthead {
     border-top: 7px solid getColor(base, primary);
     height: 180px;
     width: 100%;
+
+	.menu-item {
+	    align-items: stretch;
+	    flex: 1 1 0;
+	    height: $nav_height;
+	    justify-content: center;
+	    line-height: $nav_height;
+	    text-align: center;
+	    text-transform: uppercase;
+		position: relative;
+		&, &::before, &::after {
+		    transition-property: all;
+		    transition-duration: 0.2s;
+		    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+		    transition-delay: 0;
+		}
+		
+		&::before {
+			width: 100%;
+			height: 100%;
+			left: 0;
+			top: -$nav_height;
+			content: "";
+			background: getColor(base, primary);
+			z-index: 95;
+			position: absolute;
+		}
+
+	    &::after {
+			width: 100%;
+			height: $triangle_height;
+			position: absolute;
+			content: "";
+			left: 0;
+			bottom: $nav_height - $triangle_height;
+	    	background: linear-gradient(to right bottom, getColor(base, primary) 50%, transparent 50%);
+	    	z-index: 95;
+	    }
+		// Inside a div
+	    & > a {
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			z-index: 996;
+			overflow: hidden;
+		}
+		// Text inside 
+		& > a > span {
+			display: block;
+			height: 1em;
+			width: 100%;
+			height: 100%;
+			&, &::after {
+				transition: margin-top 0.2s cubic-bezier(0, 1, 0.5, 1) 0s;
+			}
+			&::after {
+				font-weight: bold;
+				color: getColor(text, inverted);
+				content: attr(content);
+				display: block;
+			}
+		}
+	    // Hover effect
+		&.current-menu-item::before, &:hover::before {
+			top: 0;
+		}
+		&.current-menu-item::after, &:hover::after {
+			bottom: -$triangle_height;
+		}
+		&.current-menu-item > a > span, &:hover > a > span {
+			margin-top: -$nav_height;
+		}
+	}
+
+	.nav-control {
+		height: $nav-height;
+		width: 100%;
+		position: relative;
+		& > a {
+			font-size: typeScale(3);
+			color: getColor(base, lines);
+		}
+		& > a:hover {
+			color: darken(getColor(base, lines), 20%);
+		}
+	}
+	.nav-control:not(:first-child)::before {
+	  content: "";
+	  position: absolute;
+	  left: 0;
+	  bottom: 0;
+	  top: 15%;
+	  height: 70%;
+	  width: 1px;;
+	  border-left: 1px solid lighten(getColor(base, lines), 40%);
+	}
 }
