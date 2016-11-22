@@ -455,7 +455,11 @@ $columnsCount: $columns;
 
 .fluid {
 	width: 100%;
+	margin-top: $gutter;
 	margin-bottom: $gutter;
+}
+.fluid.first-item {
+	margin-top: 0;
 }
 // FLEX
 .flex {
@@ -469,4 +473,7 @@ $columnsCount: $columns;
 }
 .flex-item.even-fill {
 	flex: 1 1 0;
+}
+.flex.column {
+	flex-direction: column;
 }

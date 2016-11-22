@@ -66,7 +66,7 @@ template,
 
 :root {
   box-sizing: border-box;
-  font-family: "Helvetica", "Arial", sans-serif;
+  font-family: "Open Sans", "Helvetica", sans-serif;
   line-height: 1.5;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -83,7 +83,7 @@ kbd,
 pre,
 samp {
   font-family: "Consolas", monospace;
-  font-size: 0.83333rem;
+  font-size: 0.75019rem;
   background-color: #f5f5f5; }
 
 code,
@@ -118,7 +118,7 @@ blockquote {
   blockquote cite,
   blockquote footer {
     color: #777;
-    font-size: 83.33333%;
+    font-size: 75.01875%;
     margin-top: 0.5lh; }
     blockquote cite:before,
     blockquote footer:before {
@@ -151,14 +151,14 @@ progress {
   vertical-align: baseline; }
 
 small {
-  font-size: 83.33333%; }
+  font-size: 75.01875%; }
 
 sub,
 sup {
   line-height: 0;
   position: relative;
   vertical-align: baseline;
-  font-size: 83.33333%; }
+  font-size: 75.01875%; }
 
 sub {
   bottom: -0.25em;
@@ -196,11 +196,11 @@ svg:not(:root) {
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
-  color: #F3599E;
+  color: #ed1b88;
   text-decoration: none;
   transition-duration: 150ms; }
   a:hover, a:focus {
-    color: #d61069; }
+    color: #960c54; }
 
 a:hover {
   outline-width: 0; }
@@ -293,7 +293,7 @@ input[type="range"] {
   input[type="range"]::range-thumb {
     border: none;
     border-radius: 50%;
-    background-color: #F3599E;
+    background-color: #ed1b88;
     height: 0.5lh;
     margin-top: -0.15lh;
     width: 0.5lh; }
@@ -301,21 +301,21 @@ input[type="range"] {
     -webkit-appearance: none; }
 
 button, input[type="submit"] {
-  background-color: #F3599E;
+  background-color: #ed1b88;
   border: none;
   color: white;
   cursor: pointer;
-  font-size: 0.83333rem;
+  font-size: 0.75019rem;
   line-height: 1.5lh;
   padding: 0 1.5em;
   transition: background-color 150ms;
   white-space: nowrap; }
   button:hover, input[type="submit"]:hover, button:focus, input[type="submit"]:focus {
-    background-color: #f571ac;
+    background-color: #ef3394;
     text-decoration: none;
     outline: none; }
   button:active, input[type="submit"]:active {
-    background-color: #f689ba; }
+    background-color: #f14aa1; }
   button[disabled], input[disabled][type="submit"] {
     background-color: #eee;
     cursor: not-allowed; }
@@ -374,42 +374,65 @@ h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
   margin-top: 0; }
 
 h1 {
-  font-size: 2.0736rem; }
+  font-size: 3.15733rem; }
 
 h2 {
-  font-size: 1.728rem; }
+  font-size: 2.36859rem; }
 
 h3 {
-  font-size: 1.44rem; }
+  font-size: 1.77689rem; }
 
 h4 {
-  font-size: 1.2rem; }
+  font-size: 1.333rem; }
 
 h5 {
   font-size: 1rem; }
 
 h6 {
-  font-size: 0.83333rem; }
+  font-size: 0.75019rem; }
 
 h1, h2, h3, h4, h5, h6 {
   color: #222;
-  font-family: "Helvetica", "Arial", sans-serif;
-  line-height: 1.3; }
+  font-family: "Roboto Condensed", "Helvetica", sans-serif;
+  line-height: 1.3;
+  font-weight: lighter; }
   h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
     color: inherit;
     vertical-align: 0;
-    font-size: 83.33333%; }
+    font-size: 75.01875%; }
 
 h1, h2, h3 {
   margin: 0.5lh 0 0.25lh; }
   h1 a, h2 a, h3 a {
     color: inherit; }
     h1 a:hover, h1 a:focus, h2 a:hover, h2 a:focus, h3 a:hover, h3 a:focus {
-      color: #F3599E;
+      color: #ed1b88;
       text-decoration: none; }
 
 h4, h5, h6 {
   margin: 0.25lh 0; }
+
+h1.primary, h2.primary, h3.primary, h4.primary, h5.primary {
+  color: #ed1b88;
+  position: relative; }
+
+h1.secondary, h2.secondary, h3.secondary, h4.secondary, h5.secondary {
+  color: #1e80c6; }
+
+.header.with-decor::before, .header.with-decor::after {
+  background: #f47ab9;
+  content: "";
+  display: block;
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  width: 1em; }
+
+.header.with-decor::before {
+  left: -1.2em; }
+
+.header.with-decor::after {
+  right: -1.2em; }
 
 ul,
 ol {
@@ -435,7 +458,7 @@ select,
 textarea {
   transition-duration: 150ms;
   width: 100%;
-  font-size: 0.83333rem;
+  font-size: 0.75019rem;
   min-height: 1.5lh; }
   input:not([type="submit"]):focus,
   select:focus,
@@ -493,7 +516,7 @@ select {
 
 label {
   display: block;
-  font-size: 0.83333rem;
+  font-size: 0.75019rem;
   line-height: 1.5lh; }
 
 input[type="checkbox"] + label,
@@ -516,7 +539,7 @@ table {
     overflow: visible;
     padding: 0 1em; }
   table caption {
-    font-size: 0.83333rem;
+    font-size: 0.75019rem;
     font-style: italic;
     line-height: 2lh;
     text-align: center; }
@@ -1641,7 +1664,11 @@ body {
 
 .fluid {
   width: 100%;
+  margin-top: 40px;
   margin-bottom: 40px; }
+
+.fluid.first-item {
+  margin-top: 0; }
 
 .flex {
   display: flex; }
@@ -1654,6 +1681,9 @@ body {
 
 .flex-item.even-fill {
   flex: 1 1 0; }
+
+.flex.column {
+  flex-direction: column; }
 
 @font-face {
   font-family: 'fontello';
@@ -2315,8 +2345,13 @@ body {
   content: '\f529'; }
 
 /* '' */
+.top-bar {
+  display: block;
+  width: 100%;
+  height: 5px;
+  background: #ed1b88; }
+
 header#masthead {
-  border-top: 7px solid #F3599E;
   height: 180px;
   width: 100%; }
   header#masthead .menu-item {
@@ -2339,7 +2374,7 @@ header#masthead {
       left: 0;
       top: -50px;
       content: "";
-      background: #F3599E;
+      background: #ed1b88;
       z-index: 95;
       position: absolute; }
     header#masthead .menu-item::after {
@@ -2349,7 +2384,7 @@ header#masthead {
       content: "";
       left: 0;
       bottom: 35px;
-      background: linear-gradient(to right bottom, #F3599E 50%, transparent 50%);
+      background: linear-gradient(to right bottom, #ed1b88 50%, transparent 50%);
       z-index: 95; }
     header#masthead .menu-item > a {
       display: block;
@@ -2381,7 +2416,7 @@ header#masthead {
     width: 100%;
     position: relative; }
     header#masthead .nav-control > a {
-      font-size: 1.2rem;
+      font-size: 1.333rem;
       color: #404042; }
     header#masthead .nav-control > a:hover {
       color: #0e0e0e; }
@@ -2394,3 +2429,13 @@ header#masthead {
     height: 70%;
     width: 1px;
     border-left: 1px solid #a6a6a8; }
+
+#presentation {
+  width: 100%;
+  height: 500px;
+  background: #f5f5f5;
+  padding: 20px 0; }
+  #presentation article > * {
+    margin: 20px 0; }
+  #presentation div.folow_me > div {
+    margin: 0 5px; }

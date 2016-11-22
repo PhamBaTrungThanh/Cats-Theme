@@ -16,12 +16,14 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <link rel="profile" href="http://gmpg.org/xfn/11">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600|Roboto+Condensed:300,400&amp;subset=vietnamese" rel="stylesheet"> 
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<div class="fluid">
+	<div class="fluid first-item">
+		<div class="top-bar"></div>
 		<div class="wrapper">
 			<a class="skip-link screen-reader-text hide" href="#content" hidden><?php esc_html_e( 'Skip to content', 'cats' ); ?></a>
 
@@ -44,8 +46,8 @@
 				
 				<nav id="site-navigation" class="main-navigation hide-tl-down row nested" role="navigation">
 					<div class="tl-4">
-						<div class="logo-image">
-							<a class="site-title-image" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri() . '/images/image_logo.png' ?>" alt=""></a>
+						<div class="logo-image flex  vertical-center horizontal-center">
+							<a class="site-title-image flex-item" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_template_directory_uri() . '/images/image_logo.png' ?>" alt=""></a>
 						</div>
 					</div>
 					<div class="tl-6">
@@ -79,5 +81,28 @@
 	<div class="fluld">
 		<?php masterslider(1); ?>
 	</div>
+	<?php if ( is_front_page() ): ?>
+	<div class="fluid" id="presentation">
+		<article class="wrapper">
+			<header class="flex horizontal-center">
+				<h1 class="header with-decor primary">Chúng tôi là ai</h1>
+			</header>
+			<section role="content">
+				<p>Lorem ipsum dolor sit amet, purto bonorum suscipit cum ea. Vivendo fastidii definitionem per ut. An nam discere ponderum, his liber everti at, has id suscipiantur comprehensam. Ei nam veritus inimicus, ad eam lorem alterum. Nobis appetere torquatos cu eos, natum convenire expetenda te vis, mea alterum mentitum id.</p>
+				<p>Zril vitae an mea, detraxit consequat ius et. His eu munere aperiri dignissim. Usu ex error dolore semper, interesset disputationi est ex. Oporteat rationibus nec ne. Natum viris perfecto eu mea, ex quem cetero salutatus duo. Etiam iudico intellegebat eum ea, ne ridens pertinacia theophrastus cum</p>
+				<p>Lorem ipsum dolor sit amet, purto bonorum suscipit cum ea. Vivendo fastidii definitionem per ut. An nam discere ponderum, his liber everti at, has id suscipiantur comprehensam. Ei nam veritus inimicus, ad eam lorem alterum. Nobis appetere torquatos cu eos, natum convenire expetenda te vis, mea alterum mentitum id.</p>
+				<p>Zril vitae an mea, detraxit consequat ius et. His eu munere aperiri dignissim. Usu ex error dolore semper, interesset disputationi est ex. Oporteat rationibus nec ne. Natum viris perfecto eu mea, ex quem cetero salutatus duo. Etiam iudico intellegebat eum ea, ne ridens pertinacia theophrastus cum</p>
+			</section>
+			<footer class="flex column horizontal-center">
+				<h2 class="footer flex horizontal-center secondary">Theo dõi</h2>
+				<div role="folow_me" class="folow_me flex horizontal-center">
+					<div class="flex-item"><a href="http://facebook.com"><img src="<?php echo get_template_directory_uri() . '/images/folow_facebook.png'?>" alt=""></a></div>
+					<div class="flex-item"><a href="http://twitch.com"><img src="<?php echo get_template_directory_uri() . '/images/folow_twitch.png'?>" alt=""></a></div>
+				</div>
+			</footer>
+		</article>
+	</div>
+	<?php endif; ?>
+
 	<div class="fluid">
 		<div id="content" class="site-content">

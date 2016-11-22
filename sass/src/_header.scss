@@ -2,9 +2,13 @@
 $nav_height: 50px;
 $triangle_height: 15px;
 
-
+.top-bar {
+	display: block;
+	width: 100%;
+	height: 5px;
+	background: getColor(base, primary);
+}
 header#masthead {
-    border-top: 7px solid getColor(base, primary);
     height: 180px;
     width: 100%;
 
@@ -103,5 +107,19 @@ header#masthead {
 	  height: 70%;
 	  width: 1px;;
 	  border-left: 1px solid lighten(getColor(base, lines), 40%);
+	}
+}
+
+#presentation {
+	width: 100%;
+	height: 500px;
+	background: getColor(background, light);
+	padding: 20px 0;
+
+	article > * {
+		margin: 20px 0;
+	}
+	div.folow_me > div {
+		margin: 0 5px;
 	}
 }
